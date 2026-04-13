@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href = "style.css">
+    <script src = "script.js" defer> </script>
+
+</head>
+
+<body>
+
+<div id="getLocationScreen">
+    <h1>Weather App</h1>
+    <div id="input-box">
+        <input type="text" id="location" placeholder="Enter location">
+        <button onclick="getWeather()">Get Weather</button>
+    </div>
+</div>
+
+<div id="result" class="hidden">
+    <div class="weather-card">
+        <h1 id="nameDisplay"></h1>
+
+        <div id="switchWeatherDisplay">
+            <button id="buttonCurrent" onclick="showCurrent()">Current Weather</button>
+            <button id="buttonForecast" onclick="showForecast()">5-Day Forecast</button>
+        </div>
+
+        <div id="currentWeatherContainer">
+            <h2>Current</h2>
+            <p id="tempDisplay"></p>
+            <p id="humidityDisplay"></p>
+            <p id="feelsLikeDisplay"></p>
+            <p id="mainWeatherDisplay"></p>
+            <p id="weatherDescriptionDisplay"></p>
+            <p id="windSpeedDisplay"></p>
+        </div>
+
+        <div id="forecastContainer" class="hidden">
+            <h2>Forecast</h2>
+            <div id="forecastList"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
