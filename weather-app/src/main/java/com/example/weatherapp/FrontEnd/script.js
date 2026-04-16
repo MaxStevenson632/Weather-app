@@ -23,6 +23,32 @@ async function getWeather() {
     }
 }
 
+async function getTopFiveCities() {
+    console.log("hello world");
+    try {
+        const response = await fetch("http://localhost:8080/cities");
+        if(!response.ok) throw new Error("URL not found");
+
+        const cities = await response.json();
+
+        const cityElement = document.getElementById("topCitiesList");
+
+        cityElement.innerHTML = "";
+
+        cities.forEach(entry => {
+            const li = document.createElement("li");
+            const cityName = entry.split(",");
+            li.textContent = cityName[0];
+            cityElement.appendChild(li);
+        })
+
+    } catch (error) {
+
+    console.error('Error fetching cities:', error);
+    document.getElementById('topCitiesList').innerHTML = '<li>Error loading data</li>';
+    }
+}
+
 function showCurrent() {
     if (!weatherData) return;
 
@@ -87,3 +113,5 @@ function updateText(idOfElement, textToDisplay) {
     var element = container.querySelector("#" + idOfElement);
     element.innerText = textToDisplay;
 }
+
+getTopFiveCities();
