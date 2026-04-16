@@ -12,7 +12,4 @@ public class WeatherAppApplication {
 
 }
 
-// TO DO
-// Limit API calls
-// Database
-// AI integration
+
